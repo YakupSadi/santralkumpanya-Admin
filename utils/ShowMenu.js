@@ -1,9 +1,9 @@
-let isButtonClicked = false
+let isButtonClicked = true
 
 
-const handleClick = () => {
+const handleClick = ( val ) => {
 
-    isButtonClicked = !isButtonClicked
+    isButtonClicked = val
 }
 
 

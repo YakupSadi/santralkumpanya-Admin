@@ -4,7 +4,14 @@ import './Header.sass'
 
 import Link from 'next/link'
 import { useEffect, useState } from 'react'
-import { handleClick, getClickStatus } from '../../utils/ShowMenu'
+
+import {
+
+    setMargin,
+    handleClick,
+    getClickStatus
+
+} from '../../utils/ShowMenu'
 
 
 export default function home()
@@ -14,15 +21,28 @@ export default function home()
 
     const setClickStatus = () => {
 
-        handleClick()
-
         const clickStatus  = getClickStatus()
+
         setIsClicked( clickStatus )
+
+        handleClick( !clickStatus )
     }
 
 
+    useEffect(() => {
+
+        window.addEventListener( 'resize', setMargin )
+
+        return () => {
+
+            window.removeEventListener( 'resize', setMargin )
+        }
+
+    } , [] )
+
+
     return (
-        <header id='header' style={{ backgroundColor: isClicked ? 'red' : 'brown' }}>
+        <header id='header' style={{ marginLeft: isClicked ? '-14rem' : '0' }}>
             <div className='menu'>
                 <Link href={ '' }>Header</Link>
             </div>
