@@ -49,7 +49,7 @@ export default function home()
 
         <header id='header' style={{ marginLeft: contentMargin.menuMargin }}>
             <div className='menu'>
-                <Link href={ '' }>Header</Link>
+                <Link href={ '' }>Dashboard</Link>
             </div>
 
             <button className='btn' onClick={ setClickStatus }>
