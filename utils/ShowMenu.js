@@ -5,16 +5,16 @@ let menuMargin      = '0'
 
 const handleClick = () => {
 
-    isButtonClicked = !isButtonClicked
-
     let width = window.innerWidth
 
-    if( width >= 992 )
+    if( 992 >= width )
     {
         contentMargin = isButtonClicked ? '-14rem' : '0'
     }
 
     menuMargin = isButtonClicked ? '-14rem' : '0'
+
+    isButtonClicked = !isButtonClicked
 }
 
 
@@ -22,13 +22,13 @@ const setMargin = () => {
 
     let width = window.innerWidth
 
-    if( width >= 992 )
+    if( 992 >= width )
     {
-        contentMargin = isButtonClicked ? '0' : '-14rem'
+        contentMargin = isButtonClicked ? '-14rem' : '0'
     }
     else
     {
-        contentMargin = '-14rem'
+        contentMargin = '0'
     }
 }
 

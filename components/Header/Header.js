@@ -26,13 +26,20 @@ export default function home()
     }
 
 
+    const manageMargin = () => {
+
+        setMargin()
+        setContentMargin( getMargin )
+    }
+
+
     useEffect( () => {
 
-        window.addEventListener( 'resize', setMargin )
+        window.addEventListener( 'resize', manageMargin )
 
         return () => {
 
-            window.removeEventListener( 'resize', setMargin )
+            window.removeEventListener( 'resize', manageMargin )
         }
 
     } , [] )
