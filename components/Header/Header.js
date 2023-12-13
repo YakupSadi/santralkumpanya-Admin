@@ -8,28 +8,25 @@ import { useEffect, useState } from 'react'
 import {
 
     setMargin,
-    handleClick,
-    getClickStatus
+    getMargin,
+    handleClick
 
 } from '../../utils/ShowMenu'
 
 
 export default function home()
 {
-    const [ isClicked, setIsClicked ] = useState( false )
+    const [ contentMargin, setContentMargin ] = useState( '0' )
 
 
     const setClickStatus = () => {
 
-        const clickStatus  = getClickStatus()
-
-        setIsClicked( clickStatus )
-
-        handleClick( !clickStatus )
+        handleClick()
+        setContentMargin( getMargin )
     }
 
 
-    useEffect(() => {
+    useEffect( () => {
 
         window.addEventListener( 'resize', setMargin )
 
@@ -42,7 +39,8 @@ export default function home()
 
 
     return (
-        <header id='header' style={{ marginLeft: isClicked ? '-14rem' : '0' }}>
+
+        <header id='header' style={{ marginLeft: contentMargin.menuMargin }}>
             <div className='menu'>
                 <Link href={ '' }>Header</Link>
             </div>

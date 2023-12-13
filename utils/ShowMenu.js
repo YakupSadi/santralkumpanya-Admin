@@ -1,21 +1,48 @@
-let isButtonClicked = true
+let isButtonClicked = false
+let contentMargin   = '0'
+let menuMargin      = '0'
 
 
-const handleClick = ( val ) => {
+const handleClick = () => {
 
-    isButtonClicked = val
+    isButtonClicked = !isButtonClicked
+
+    let width = window.innerWidth
+
+    if( width >= 992 )
+    {
+        contentMargin = isButtonClicked ? '-14rem' : '0'
+    }
+
+    menuMargin = isButtonClicked ? '-14rem' : '0'
 }
 
 
-const getClickStatus = () => {
+const setMargin = () => {
 
-    return isButtonClicked
+    let width = window.innerWidth
+
+    if( width >= 992 )
+    {
+        contentMargin = isButtonClicked ? '0' : '-14rem'
+    }
+    else
+    {
+        contentMargin = '-14rem'
+    }
+}
+
+
+const getMargin = () => {
+
+    return { menuMargin, contentMargin }
 }
 
 
 module.exports = {
 
+    setMargin,
+    getMargin,
     handleClick,
-    getClickStatus
 
 }
