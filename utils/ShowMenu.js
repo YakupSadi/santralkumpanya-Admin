@@ -9,10 +9,10 @@ const handleClick = () => {
 
     if( 992 >= width )
     {
-        contentMargin = isButtonClicked ? '-14rem' : '0'
+        contentMargin = isButtonClicked ? '-15rem' : '0'
     }
 
-    menuMargin = isButtonClicked ? '-14rem' : '0'
+    menuMargin = isButtonClicked ? '-15rem' : '0'
 
     isButtonClicked = !isButtonClicked
 }

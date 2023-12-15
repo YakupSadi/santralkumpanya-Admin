@@ -1,24 +1,41 @@
 #header
     width: 18rem
     height: 100vh
-    display: flex
     transition: .5s
     position: absolute
-    margin-left: -14rem
-    background-color: red
-    justify-content: space-between
+    margin-left: -15rem
+    background-color: #e21c21
+    border-right: .2rem solid #fff
 
     .menu
-        width: 100%
-        background-color: orange
+        display: flex
+        padding-left: 1rem
+        align-items: center
+        justify-content: space-between
+        border-bottom: .2rem solid #fff
 
-    .btn
+        a
+            color: #fff
+            font-size: 1.3rem
+
+        .btn
+            color: #fff
+            cursor: pointer
+            font-size: 2rem
+            padding: 0 .5rem
+
+    .menu_list
         color: #fff
-        cursor: pointer
-        font-size: 2rem
-        height: fit-content
-        padding: .5rem 1rem
-        background-color: orange
+        font-size: 1.2rem
+        padding: 1rem 0 0 1rem
+    
+        a
+            margin: .5rem 0
 
+        span
+            margin: 1rem 0
+            width: fit-content
+            padding: .5rem 1rem
+            background-color: #000
 
 @media ( min-width: 62em )
